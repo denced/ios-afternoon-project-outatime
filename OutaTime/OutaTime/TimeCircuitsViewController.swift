@@ -18,13 +18,14 @@ class TimeCircuitsViewController: UIViewController {
     @IBAction func travelBackButton(_ sender: Any) {
     }
     
-    
+    var currentSpeed: Int = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presentTimeLabel.text = dateFormatter.string(from: .init())
-        
+        speedMPHlabel.text = "\(currentSpeed) MPH"
+        lastTimeDepartedLabel.text = "--- -- ----"
 
     }
     
