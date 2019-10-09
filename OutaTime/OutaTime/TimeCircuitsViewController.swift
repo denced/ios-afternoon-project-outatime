@@ -14,6 +14,7 @@ class TimeCircuitsViewController: UIViewController {
     @IBOutlet weak var presentTimeLabel: UILabel!
     @IBOutlet weak var destinationLabel: UILabel!
     @IBOutlet weak var speedMPHlabel: UILabel!
+    
     @IBAction func travelBackButton(_ sender: Any) {
     }
     
@@ -22,9 +23,18 @@ class TimeCircuitsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presentTimeLabel.text = dateFormatter.string(from: .init())
+        
 
-        // Do any additional setup after loading the view.
     }
+    
+    private var dateFormatter: DateFormatter = {
+       let formatter = DateFormatter()
+        formatter.dateFormat = "MMM dd yyyy"
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter
+    }()
+    
     
 
     /*
