@@ -35,7 +35,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JAN 01 2000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRv-ya-4cL">
                                                 <rect key="frame" x="0.0" y="28.5" width="269.5" height="55"/>
                                                 <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="60"/>
-                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -52,7 +52,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JUN 12 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2u-lx-Mse">
                                                 <rect key="frame" x="0.0" y="28.5" width="251" height="55"/>
                                                 <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="60"/>
-                                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -69,7 +69,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--- -- ----" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KX-1d-TjI">
                                                 <rect key="frame" x="0.0" y="28.5" width="249" height="55"/>
                                                 <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="60"/>
-                                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -86,7 +86,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 MPH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9W-rV-ywp">
                                                 <rect key="frame" x="0.0" y="32.5" width="130" height="55"/>
                                                 <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="60"/>
-                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -121,7 +121,7 @@
                         <viewLayoutGuide key="safeArea" id="NzA-P5-YKT"/>
                     </view>
                     <connections>
-                        <outlet property="destinationLabel" destination="IRv-ya-4cL" id="LPH-ze-j4L"/>
+                        <outlet property="destinationTimeLabel" destination="IRv-ya-4cL" id="8ad-Qk-1Wo"/>
                         <outlet property="lastTimeDepartedLabel" destination="2KX-1d-TjI" id="cjr-Li-4k1"/>
                         <outlet property="presentTimeLabel" destination="z2u-lx-Mse" id="4vV-qu-qbw"/>
                         <outlet property="speedMPHlabel" destination="c9W-rV-ywp" id="l3I-cx-yf9"/>
@@ -139,30 +139,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="cIW-Mu-om1">
-                                <rect key="frame" x="0.0" y="299" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="220" translatesAutoresizingMaskIntoConstraints="NO" id="eNP-fV-onv">
+                                <rect key="frame" x="20.5" y="188" width="373" height="466"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="cIW-Mu-om1">
+                                        <rect key="frame" x="26.5" y="0.0" width="320" height="216"/>
+                                    </datePicker>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="288" translatesAutoresizingMaskIntoConstraints="NO" id="e9u-bf-CBe">
+                                        <rect key="frame" x="0.0" y="436" width="373" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Slw-Jt-ExJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="48" height="30"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancelButton:" destination="M9G-Y8-igp" eventType="touchUpInside" id="H8r-kA-eDV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3A-rv-zYw">
+                                                <rect key="frame" x="336" y="0.0" width="37" height="30"/>
+                                                <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="doneButton:" destination="M9G-Y8-igp" eventType="touchUpInside" id="tVK-fH-PxU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eNP-fV-onv" firstAttribute="centerY" secondItem="Uz0-ju-npg" secondAttribute="centerY" id="PIa-af-P3d"/>
+                            <constraint firstItem="eNP-fV-onv" firstAttribute="centerX" secondItem="Uz0-ju-npg" secondAttribute="centerX" id="srI-xh-MtO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ua3-f2-qD6"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem systemItem="cancel" id="IFi-WL-jc1">
-                            <connections>
-                                <action selector="cancelButton:" destination="M9G-Y8-igp" id="k6g-JY-HIf"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="vSF-6L-C2F"/>
-                        <barButtonItem systemItem="done" id="kKv-TE-o6h">
-                            <connections>
-                                <action selector="doneButton:" destination="M9G-Y8-igp" id="5iV-NS-hyL"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="datePicker" destination="cIW-Mu-om1" id="HCT-XG-TdL"/>
+                        <outlet property="datePicker" destination="cIW-Mu-om1" id="yV2-R6-yxD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cc4-VG-tiO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
